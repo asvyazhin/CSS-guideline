@@ -16,7 +16,7 @@ What are the benefits we get if all developers will follow the same set of rules
 
 All selector declarations must conform to the following pattern:
 
-```
+```css
 [selector],
 [selector] {
     [property]: [value];
@@ -39,7 +39,7 @@ All selector declarations must conform to the following pattern:
 13. Parameter '!important' should be avoided, this is permissible only as a last resort as a temporary solution of urgent problems. The property includes '!important' should always be accompanied TODO-comment.
 
 
-```
+```css
 WRONG
 .product__note
 {
@@ -52,7 +52,7 @@ WRONG
 }
 ```
 
-```
+```css
 *** RIGHT ***
 .product__note {
     font-size: .9em;
@@ -65,18 +65,18 @@ WRONG
 ```
 _Exception:_ selector only with one property should be written in one line:
 
-```
+```css
 [selector] { [property]: [value]; }
 ```
 
-```
+```css
 *** WRONG ***
 .product_title {
     font-weight: bold;
 }
 ```
 
-```
+```css
 *** RIGHT ***
 .product_title { font-weight: bold; }
 ```
@@ -133,7 +133,7 @@ To increase the productivity of working with code, it is important save the same
 
 Example:
 
-```
+```css
 .current-list {
     /* Positioning */
     position: absolute;
