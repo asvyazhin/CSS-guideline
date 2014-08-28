@@ -25,17 +25,17 @@ All selector declarations must conform to the following pattern:
 ```
 
 1. If a declaration specifying multiple selectors, each of them must begin on a new line.
-2. The opening curly brace ({) should be separated from the selector by a single space and is located on one line with the last selector.
-3. Property and value must be written in one line.
-4. Value is separated from the colon (:) by a single space.
-5. Description of each property ends with a semicolon (;).
-6. The closing curly brace (}) is always placed on a new line with no indentation from the edge.
-7. Indentation from the left margin equal to 4 whitespaces. Whitespaces should not be mixed with Tabs.
+2. Indentation from the left margin equal to 4 whitespaces. Whitespaces shouldn't be mixed with Tabs.
+3. The opening curly brace ({) should be separated from the selector by a single space and is located on one line with the last selector.
+4. Property and value must be written in one line.
+5. Value is separated from the colon (:) by a single space.
+6. Description of each property ends with a semicolon (;).
+7. The closing curly brace (}) is always placed on a new line with no indentation from the edge.
 8. Omit the '0' for non-integer values ​​from -1 to 1, where it is possible.
 9. Use a hex notation for colors and shorthand hex where it is possible (for examplae, #aaa). If you use rgba notation then before it needs a callback in hex (for browsers which do not support rgba).
 10. Parameter '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the commentcomment.
 11. Use only single quotes in the declaration of properties.
-12. Do not put quotes inside a url tag.
+12. Do not put quotes inside a 'url()'.
 14. Always use lowercase for properties (exception: font-family).
 
 ```css
