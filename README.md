@@ -53,7 +53,7 @@ selector {
 _Exception:_ selector only with one property should be written in one line:
 
 ```css
-[selector] { [property]: [value]; }
+selector { property: value; }
 ```
 
 ```css
