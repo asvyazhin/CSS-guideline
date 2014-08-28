@@ -342,17 +342,17 @@ $color-note: #999;
 $color-link: #000;
 $color-link-hover: #ff0000;
 
-$min-width-s:;
-$max-width-s:;
+$min-width-s: 100;
+$max-width-s: 100;
 
-$min-width-m:;
-$max-width-m:;
+$min-width-m: 100;
+$max-width-m: 100;
 
-$min-width-l:;
-$max-width-l:;
+$min-width-l: 100;
+$max-width-l: 100;
 
-$min-width-xl:;
-$max-width-xl:;
+$min-width-xl: 100;
+$max-width-xl: 100;
 
 
 // Media queries
