@@ -332,8 +332,8 @@ $line—height-s: 1.4;
 $line—height-m: 1.6;
 $line—height-l: 1.8;
 
-$font-family-sans: Arial, Tahoma, Verdana, sans; 
-$font-family-serif: ’Times New Roman’, Times, Georgia, sans-serif;
+$font-family-sans: 'Arial, Tahoma, Verdana, sans'; 
+$font-family-serif: ’Times New Roman, Times, Georgia, sans-serif';
 
 $color-text: #333;
 
