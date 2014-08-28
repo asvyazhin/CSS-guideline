@@ -382,15 +382,15 @@ All global and basic styles should be placed in the basic.scss
 
 ## HTML
 
-preferable to use html5
+Preferable to use html5
 
-```html
+```css
 <!DOCTYPE html>
 ```
 
 In the tag '<link>' and '<script>' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
 
-```html
+```css
 <!-- Not recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css" type="text/css">
 
