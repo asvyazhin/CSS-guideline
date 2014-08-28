@@ -367,7 +367,7 @@ Preferable to use html5
 <!DOCTYPE html>
 ```
 
-In the tag 'link' and 'script' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
+In the tag \<link\> and 'script' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
 
 ```html
 <!-- Not recommended -->
