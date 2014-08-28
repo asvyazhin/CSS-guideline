@@ -31,7 +31,7 @@ All selector declarations must conform to the following pattern:
 5. Value is separated from the colon (':') by a single space.
 6. Description of each property ends with a semicolon (';').
 7. The closing curly brace ('}') is always placed on a new line with no indentation from the edge.
-8. Omit the '0' for non-integer values ​​from -1 to 1, where it is possible.
+8. Omit the '0' befor '.' for non-integer values ​​from -1 to 1 (where it is possible).
 9. Use a hex notation for colors and shorthand hex where it is possible (for examplae, #aaa). If you use rgba notation then before it needs a callback in hex (for browsers which do not support rgba).
 10. Parameter '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the commentcomment.
 11. Use only single quotes in the declaration of properties.
