@@ -455,9 +455,9 @@ In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. B
 ```
 
 
-## Whitespace
+## Line breaks
 
-This one is hard to quantify, but I like to use whitespace to loosely reflect the separation of elements that you might see once rendered. I group and space elements with whitespace as you would expect them to be grouped visually in the rendered page, for example:
+It is strongly recommended to separate semantic groups of a tags by blank lines for the visual distinction.
 
 ```html
 <dl>
@@ -484,7 +484,7 @@ This one is hard to quantify, but I like to use whitespace to loosely reflect th
 
 ## Comments on closing tags
 
-After every major chunk of HTML, for example, the end of a carousel, or the end of the content <div>, I place a closing-comment, for example:
+After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after last closing tag, for example:
 
 ```html
 <div class=content>
@@ -500,30 +500,25 @@ After every major chunk of HTML, for example, the end of a carousel, or the end 
 </div><!-- /content -->
 ```
 
-## Id and classes for javascript
+## Id and classes for Javascript
 
 Id and class attributes are intended to work only with javascript should not receive any decoration styles and always should be prefixed with 'js-'.
 
 
-## Responsive design
+## Common rules for responsive design
 
-* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You can not specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
+* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
 * Do not specify a unit of measurement for the 'line-height'. So 'line-height' will be designed proportionally to the current font size.
-
 ```css
 line-height: 1.4;
 ```
-
-* Do not use <table> for layout
-* For padding it is desirable to use em instead of px
-* All responsive pages should have 'viewport' meta-tag
- 
+* Do not use \<table\> for layouts.
+* For padding it is desirable to use em instead of px.
+* All responsive pages should have 'viewport' meta-tag.
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-
-* Following to Mobile-first style we should use only 'min-width' for media queries
-
+* Following to mobile-first style we should use only 'min-width' for media queries.
 ```css
 @media all and (min-width: 50em) {...}
 ```
