@@ -372,12 +372,10 @@ In the tag \<link\> and \<script\> to reference the CSS and Javascript respectiv
 ```html
 <!-- Not recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css" type="text/css">
-
 <script src="//www.somedomain.com/js/script.js" type="text/javascript"></script>
   
 <!-- Recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css">
-
 <script src="//www.somedomain.com/js/script.js"></script>
 
 ```
