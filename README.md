@@ -361,20 +361,25 @@ All global and basic styles should be placed in the basic.scss
 
 ## HTML
 
-Preferable to use html5
+Preferable to use html5.
 
 ```html
 <!DOCTYPE html>
 ```
 
-In the tag \<link\> and 'script' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
+In the tag \<link\> and \<script\> to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted.
 
 ```html
 <!-- Not recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css" type="text/css">
 
+<script src="//www.somedomain.com/js/script.js" type="text/javascript"></script>
+  
 <!-- Recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css">
+
+<script src="//www.somedomain.com/js/script.js"></script>
+
 ```
 
 Order of attributes in a tags:
