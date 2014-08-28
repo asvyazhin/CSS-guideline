@@ -301,7 +301,7 @@ What z-index value to use depends on the context of use:
 * Nested selectors should be indented from the left. 
 * Nested selectors must be separated by one blank line above and below.
 
-```css
+```scss
 .ecard {  
 					
 	&__header {
@@ -323,7 +323,7 @@ All variables must be in a separate file (vars.scss)
 
 For the convenience of CSS support in the variables must be defined for all values ​​of the properties: font-size, font-family, line-height, color, background-color, min-width and max-width для @media
 
-```css
+```scss
 $font-size-s: 1.2em;
 $font-size-m: 1.4em;
 $font-size-l: 1.6em;
@@ -384,13 +384,13 @@ All global and basic styles should be placed in the basic.scss
 
 Preferable to use html5
 
-```css
+```html
 <!DOCTYPE html>
 ```
 
 In the tag '<link>' and '<script>' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
 
-```css
+```html
 <!-- Not recommended -->
 <link rel="stylesheet" href="//www.somedomain.com/css/style.css" type="text/css">
 
