@@ -17,10 +17,10 @@ What are the benefits we get if all developers will follow the same set of rules
 All selector declarations must conform to the following pattern:
 
 ```css
-[selector],
-[selector] {
-    [property]: [value];
-    [property]: [value];
+selector,
+selector {
+    property: value;
+    property: value;
 }
 ```
 
