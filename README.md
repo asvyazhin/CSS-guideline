@@ -297,21 +297,21 @@ What z-index value to use depends on the context of use:
 ##SASS
 
 * Limit nesting level by one.
-* Use & for naming of a nested selectors
+* Use & for BEM-style naming of a nested selectors
 * Nested selectors should be indented from the left. 
 * Nested selectors must be separated by one blank line above and below.
 
 ```css
 .ecard {  
-					/* 1 пустая строка перед вложенным селектором */
-	&__header {		/* & помогает устранить повторение название блока в 				названии элемента */
+					
+	&__header {
 		
 	}
-				    /* 1 пустая строка после вложенного селектора */
+	
 }
 
 .ecard--theme_confirmation {
-					/* вложенные декларации имеют отступ слева */
+
 	.ecard__title {
 		font-weight: bold;
 	}
