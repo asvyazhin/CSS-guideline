@@ -507,6 +507,10 @@ Id and class attributes are intended to work only with javascript should not rec
 
 ## Common rules for responsive design
 
+* All responsive pages should have 'viewport' meta-tag.
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
 * Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
 * Do not specify a unit of measurement for the 'line-height'. So 'line-height' will be designed proportionally to the current font size.
 ```css
@@ -514,10 +518,6 @@ line-height: 1.4;
 ```
 * Do not use \<table\> for layouts.
 * For padding it is desirable to use em instead of px.
-* All responsive pages should have 'viewport' meta-tag.
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
 * Following to mobile-first style we should use only 'min-width' for media queries.
 ```css
 @media all and (min-width: 50em) {...}
