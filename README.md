@@ -342,17 +342,17 @@ $color-note: #999;
 $color-link: #000;
 $color-link-hover: #ff0000;
 
-min-width-s:
-max-width-s:
+$min-width-s:;
+$max-width-s:;
 
-min-width-m:
-max-width-m:
+$min-width-m:;
+$max-width-m:;
 
-min-width-l:
-max-width-l:
+$min-width-l:;
+$max-width-l:;
 
-min-width-xl:
-max-width-xl:
+$min-width-xl:;
+$max-width-xl:;
 
 
 // Media queries
@@ -388,7 +388,7 @@ preferable to use html5
 <!DOCTYPE html>
 ```
 
-In the tag <link> and <script> to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
+In the tag '<link>' and '<script>' to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted
 
 ```html
 <!-- Not recommended -->
