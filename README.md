@@ -398,46 +398,31 @@ Order of attributes in a tags:
      alt="">
 ```
 
-Format of todo-comments (responsible developer is optional):
+Format of todo-comments (developer's name is optional):
 
 ```html
 <!-- @asvyazhin TODO: remove optional tags -->
 <!-- TODO: change <div> on <ul> -->
 ```
 
-Layout should be semantic, tags should be associated with they purposes:
+Layout should be semantic, tags should be associated with they purposes.
 
 ```html
 <!-- Not recommended -->
 <div onclick="goToRecommendations();">All recommendations</div>
+
 <!-- Recommended -->
 <a href="recommendations/">All recommendations</a>
 ```
 
-All <img> should have 'alt' attribute:
+All \<img\> should have 'alt' attribute.
 
 ```html
 <!-- Not recommended -->
-<img src="spreadsheet.png">
+<img src="product.png">
+
 <!-- Recommended -->
-<img src="spreadsheet.png" alt="Spreadsheet screenshot.">
-```
-
-```html
-<!-- Not recommended -->
-<script src="//www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script>
-<!-- Recommended -->
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-```
-
-HTML5 позволяет
-Для ясности кода мы используем закрывающие тэги в стиле XML:
-
-```html
-<ul>
-<li></li>
-<li></li>
-</ul>
+<img src="product.png" alt="Product name">
 ```
 
 ## No self closing tags
@@ -452,20 +437,20 @@ With HTML5 we can omit the '/>' for tags like '<br />', '<hr />', '<img />' etc.
 
 ## Optional closing tags
 
-In HTML5 (or non-XHTML syntax) you can omit actual, full closing tags from certain elements! But is recommended to use the closing tags, code will be clearer and will not confuse the other team members.
+In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. But is recommended to use the closing tags, so code will be clearer and will not confuse the other team members.
 
 
 ```html
 <!-- Not recommended -->
 <ul>
-<li>
-<li>
+    <li>
+    <li>
 </ul>
 
 <!-- Recommended -->
 <ul>
-<li></li>
-<li></li>
+    <li></li>
+    <li></li>
 </ul>
 ```
 
