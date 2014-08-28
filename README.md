@@ -202,7 +202,13 @@ CSS files for each Block must begin with the title comment.
     
     #BLOCK-NAME
 
-    About this block, about elements and modifiers for this block.
+    Description: description of the block.
+    
+    Elements:
+    ...
+    
+    Modifiers:
+    ...
 
     HTML sample:
     <div class="menu menu--type-main">
@@ -240,21 +246,28 @@ Each of selector's properties can have own one-line explanatory comments:
 
 # Line breaks
 
-Line breaks in CSS used for the visual distinction. 
+Line breaks in CSS used for the visual distinction. Recommended to use indentation in 1 line break between the declarations. When you need more visual differentiation is allowed to use 2 blank line breaks.
 
-1 line break - to close within the meaning of selectors (elements of one block, one block modifiers) 
-
-2 line break - different in the sense of the selectors (element and modifier of one block)
+For example:
 
 ```css
 /*------------------------------------*\
     
-    #SECTION-TITLE
+    #PRODUCT
 
-    Description (about this block, about elements and modifiers for this block)
+    Description: displays detailed information about the product.
+    
+    Elements:
+    product__picture
+    product__title
+    
+    
+    Modifiers:
+    product--type_product-page
+    product--type_grid
+    
 
-    Sample HTML-template
-
+    HTML sample:
     <div class="menu menu--type-main">
     	<div class="menu__logo">
     	</div>
@@ -271,13 +284,17 @@ Line breaks in CSS used for the visual distinction.
 }
 
 
- /**
- * #PRODUCT--TYPE
+/**
+ * product--type_product-page - for detailed page of product
  */
 
 .product--type_product-page {
 	
 }
+
+/**
+ * product--type_product-page - for detailed page of product
+ */
 
 .product--type_grid {
 	
@@ -358,6 +375,23 @@ $max-width-xl: 100;
 
 All global and basic styles should be placed in the basic.scss
 
+## Common rules for responsive design
+
+* All responsive pages should have 'viewport' meta-tag.
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
+* Do not specify a unit of measurement for the 'line-height'. So 'line-height' will be designed proportionally to the current font size.
+```css
+line-height: 1.4;
+```
+* Do not use \<table\> for layouts.
+* For padding it is desirable to use em instead of px.
+* Following to mobile-first style we should use only 'min-width' for media queries.
+```css
+@media all and (min-width: 50em) {...}
+```
 
 ## HTML
 
@@ -503,22 +537,3 @@ After a long chain of tags that belong to the same semantic group, it is recomme
 ## Id and classes for Javascript
 
 Id and class attributes are intended to work only with javascript should not receive any decoration styles and always should be prefixed with 'js-'.
-
-
-## Common rules for responsive design
-
-* All responsive pages should have 'viewport' meta-tag.
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
-* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
-* Do not specify a unit of measurement for the 'line-height'. So 'line-height' will be designed proportionally to the current font size.
-```css
-line-height: 1.4;
-```
-* Do not use \<table\> for layouts.
-* For padding it is desirable to use em instead of px.
-* Following to mobile-first style we should use only 'min-width' for media queries.
-```css
-@media all and (min-width: 50em) {...}
-```
