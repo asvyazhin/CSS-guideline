@@ -393,9 +393,9 @@ Order of attributes in a tags:
 </a>
 
 <img class=""
-   id=""
-   src=""
-   alt="">
+     id=""
+     src=""
+     alt="">
 ```
 
 Format of todo-comments (responsible developer is optional):
