@@ -36,7 +36,7 @@ All selector declarations must conform to the following pattern:
 10. Parameter '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the commentcomment.
 11. Use only single quotes in the declaration of properties.
 12. Do not put quotes inside a url tag.
-14. Always use lowercase. Exception: name of the font family.
+14. Always use lowercase for properties (exception: font-family).
 
 ```css
 .product__note {
@@ -62,15 +62,15 @@ _Exception:_ selector only with one property should be written in one line:
 
 ## Naming convention
 
-In the name of the selectors we are adhere to the BEM ideology. BEM - it's a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming style of CSS selectors.
+In the name of the selectors we are adhere to the BEM ideology. BEM - it's a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming of CSS selectors.
 
-### Short introduction to BEM.
+### Short introduction to BEM
 
 _Block_ - absolutely independent entity, brick of a project. This unit can be simple or composite, i.e. contain other Blocks.
 
 _Element_ - part of the Block, responsible for a particular function. It may be only a part of the Block and does not make sense in isolation from Block.
 
-_Modifier_ - property of a Block or Element that changes the appearance or behavior. Has a name and a value. Simultaneously can be used several different modifiers for one Block or Element.
+_Modifier_ - property of a Block or Element that changes the appearance or behavior. Has a name and a value. Simultaneously can be used several different Modifiers for one Block or Element.
 
 ### Syntax
 ##### Block
@@ -90,17 +90,11 @@ Element consists of the Block's name, double underscore (__) and the name of the
 
 ```css
 /*
-'menu' - block name
-'item' - element name
+'menu__item', 'menu__promo-link' - elements of the block 'menu'
 */
 
 .menu__item {
 }
-
-/*
-'menu' - block name
-'promo-link' - element name
-*/
 
 .menu__promo-link {
 }
@@ -111,6 +105,7 @@ Modifier consists of a Block's (or Element) name, a double hyphen (--), Modifier
 
 ```css
 /*
+'menu--theme_categories' - modifier for the block 'menu'
 'theme' - modifier name
 'categories' - modifier value
 */
@@ -119,6 +114,7 @@ Modifier consists of a Block's (or Element) name, a double hyphen (--), Modifier
 }
 
 /*
+'menu__item--type_promo' - modifier for the element 'menu__item'
 'type' - modifier name
 'promo' - modifier value
 */
@@ -140,14 +136,13 @@ Example of cascade:
 
 ```css
 /*
-'menu--theme_categories' - modifier for Block 'menu'
-'menu__item' - element of Block 'menu'
+'menu--theme_categories' - modifier for the block 'menu'
+'menu__item' - element for the block 'menu'
 */
 
 .menu--theme_categories .menu__item {
 }
 ```
-
 
 More information about BEM you can find on <http://bem.info>
 
