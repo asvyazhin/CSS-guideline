@@ -147,7 +147,7 @@ Example of cascade:
 More information about BEM you can find on <http://bem.info>
 
 
-# Order of the selector's properties
+# Order of the selector properties
 
 To increase the productivity of working with code, it is important to have the same order of describing the properties. All style properties are divided into 4 types: Position, Display & Box model, Typography and Other decoration styles.
 
@@ -286,7 +286,7 @@ Line breaks in CSS used for the visual distinction.
 
 # Z-index
 
-Z-index value depends on the context of use:
+What z-index value to use depends on the context of use:
 
 1. Page elements: 1-300.
 2. Popup elements on a page: 101 - 300.
@@ -296,10 +296,10 @@ Z-index value depends on the context of use:
 
 ##SASS
 
-Limit nesting level by one.
-Use & for naming of a nested selectors
-Nested selectors should be indented from the left. 
-Nested selectors must be separated by one blank line above and below.
+* Limit nesting level by one.
+* Use & for naming of a nested selectors
+* Nested selectors should be indented from the left. 
+* Nested selectors must be separated by one blank line above and below.
 
 ```css
 .ecard {  
