@@ -354,27 +354,6 @@ $max-width-l: 100;
 $min-width-xl: 100;
 $max-width-xl: 100;
 
-
-// Media queries
-// ---------------------------------------------------------------------
-@mixin breakpoint($point) {
-    @if $point == l {
-        @media (max-width: 1600px) { @content; }
-    }
-    @else if $point == m {
-        @media (max-width: 1250px) { @content; }
-    }
-    @else if $point == s {
-        @media (max-width: 650px)  { @content; }
-    }
-}
- 
-// .module {
-//   width: 25%;
-//   @include breakpoint(s) {
-//     width: 100%;
-//   }
-// }
 ```
 
 All global and basic styles should be placed in the basic.scss
