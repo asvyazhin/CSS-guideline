@@ -33,7 +33,7 @@ All selector declarations must conform to the following pattern:
 7. The closing curly brace ('}') is always placed on a new line with no indentation from the edge.
 8. Omit the '0' befor '.' for non-integer values ​​from -1 to 1 (where it is possible).
 9. Use a hex notation for colors and shorthand hex where it is possible (for examplae, #aaa). If you use rgba notation then before it needs a callback in hex (for browsers which do not support rgba).
-10. Parameter '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the commentcomment.
+10. Property '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the comment.
 11. Use only single quotes in the declaration of properties.
 12. Do not put quotes inside a 'url()'.
 13. Always use lowercase for properties (exception: font-family).
@@ -123,7 +123,7 @@ Modifier consists of a Block's (or Element) name, a double hyphen (--), Modifier
 }
 ```
 
-### Important features
+#### Important features
 
 * BEM-methodology excludes the using of id-type selectors for describing the styles (to avoid the high specificity and providing the possibility of re-using a Block). Only class-type selectors allowed for style declaration.
 * Selector name shouldn't be too abstract and at the same time shouldn't describe the content (for example, instead of '.red' will be better to use '.title-error').
@@ -147,7 +147,7 @@ Example of cascade:
 More information about BEM you can find on <http://bem.info>
 
 
-# Order of the selector properties
+## Order of the selector properties
 
 To increase the productivity of working with code, it is important to have the same order of describing the properties. All style properties are divided into 4 types: Position, Display & Box model, Typography and Other decoration styles.
 
@@ -186,14 +186,14 @@ Example:
 }
 ```
 
-# Multiple CSS files
+## Multiple CSS files
 
 Each Block is described by a separate file and there is only one file which describes one Block. File for Block also includes Elements and Modifiers of the Block. Name of the file is equivalent to the Block name (for example, menu.css, product.css).
 
 Global styles should be presented in separated CSS file (basic.css).
 
 
-# Comments 
+## Comments 
 
 CSS files for each Block must begin with the title comment.
 
@@ -211,9 +211,8 @@ CSS files for each Block must begin with the title comment.
     ...
 
     HTML sample:
-    <div class="menu menu--type-main">
-    	<div class="menu__logo">
-    	</div>
+    <div class="...">
+    	...
     </div>
 
 \*------------------------------------*/
@@ -227,11 +226,11 @@ Comment for selector:
  */
 ```
 
-TODO-comment for selector:
+TODO-comment for selector (developer's name is optional):
 
 ```css
 /**
- * TODO: some comment
+ * [@developer] TODO: some comment
  */
 ```
 
@@ -244,9 +243,9 @@ Each of selector's properties can have own one-line explanatory comments:
 }
 ```
 
-# Line breaks
+## Line breaks
 
-Line breaks in CSS used for the visual distinction. Recommended to use indentation in 1 line break between the declarations. When you need more visual differentiation is allowed to use 2 blank line breaks.
+Line breaks in CSS used for the visual distinction. Recommended to use indentation in 1 blank line break between the declarations. When you need more visual differentiation is allowed to use 2 blank line breaks.
 
 For example:
 
@@ -261,12 +260,10 @@ For example:
     product__picture
     product__title
     
-    
     Modifiers:
     product--type_product-page
     product--type_grid
     
-
     HTML sample:
     <div class="menu menu--type-main">
     	<div class="menu__logo">
@@ -301,7 +298,7 @@ For example:
 }
 ```
 
-# Z-index
+## Z-index
 
 What z-index value to use depends on the context of use:
 
@@ -393,7 +390,7 @@ line-height: 1.4;
 @media all and (min-width: 50em) {...}
 ```
 
-## HTML
+# HTML
 
 Preferable to use html5.
 
