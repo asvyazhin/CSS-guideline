@@ -1,4 +1,4 @@
-# Rules and principles for the development of scalable CSS
+# Rules and principles of scalable CSS
 
 ## Necessity to comply with agreements
 
