@@ -505,10 +505,10 @@ It is strongly recommended to separate semantic groups of a tags by blank lines 
 </dl>
  
  
-<div class=promo>
+<div class="promo">
 
     <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.</p>    
-    <a href=# class=btn>Lorem</a>
+    <a href="#" class="btn">Lorem</a>
 
 </div>
 ```
@@ -518,17 +518,17 @@ It is strongly recommended to separate semantic groups of a tags by blank lines 
 After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after last closing tag, for example:
 
 ```html
-<div class=content>
+<div class="product">
 
     ...
 
-    <div class=carousel>
+    <div class="product__picture">
     ...
-    </div><!-- /carousel -->
+    </div><!-- /product__picture -->
 
     ...
 
-</div><!-- /content -->
+</div><!-- /product -->
 ```
 
 ## Id and classes for Javascript
