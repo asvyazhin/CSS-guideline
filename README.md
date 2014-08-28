@@ -427,7 +427,7 @@ All \<img\> should have 'alt' attribute.
 
 ## No self closing tags
 
-With HTML5 we can omit the '/>' for tags like '<br />', '<hr />', '<img />' etc.
+With HTML5 we can omit the \/\> for tags like \<br \/\>, \<hr \/\>, \<img \/\> etc.
 
 ```html
 <br>
