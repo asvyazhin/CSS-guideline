@@ -311,14 +311,14 @@ Which z-index value should be used depends on the context of use:
 ##SASS
 
 * Limit nesting level by one.
-* Use & for BEM-style naming of a nested selectors
+* Use ampersand (&) for BEM-style naming of a nested selectors
 * Nested selectors should be indented from the left. 
 * Nested selectors must be separated by one blank line above and below.
 
 ```scss
 .ecard {  
 					
-	&__header {
+	&__header { /* ecar__header */
 		
 	}
 	
@@ -335,7 +335,7 @@ Which z-index value should be used depends on the context of use:
 
 All variables must be in a separate file (vars.scss)
 
-To better support the CSS, variables must be defined for properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media
+To better support the CSS, variables must be defined for common properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media
 
 ```scss
 $font-size-s: 1.2em;
