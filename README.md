@@ -1,16 +1,16 @@
-# Rules and principles of scalable CSS
+# Rules and principles for scalable CSS
 
 ## Necessity to comply with agreements
 
-CSS (cascading style sheets) actually don't have a strict declaration and each developer can make it as it sees fit. It may well work for a small project where the development team is one person. But for large, scalable and supported projects, we must follow by a strict discipline for writing CSS.
+CSS (cascading style sheets) actually don't have a strict declaration and each developer can write CSS as he or she sees fit. This may work for a small project where the development team is one person. But for large, scalable and projects that require support, best practice requires that teams follow a stricter discipline for writing CSS.
 
-What are the benefits we get if all developers will follow the same set of rules and principles:
+These are the benefits from having developers follow the same set of rules and principles:
 
 1. Single solid style. All CSS files will look as if they were written by one person, even if there is a whole team of developers. 
-2. The code will be transparent for all participants in the development process. On the understanding of the code will spents a minimum of time. 
-3. Development productivity will increase. Strict rules to shorten the time required for editing and creating new styles.
+2. The code will be transparent for all participants in the development process. A very minimal amount of time will be spent trying to understand the code.
+3. Development productivity will increase. Strict rules shorten the time required for editing and creating new styles.
 4. The code will be scalable and reusable.
-5. Easy entry to the project for new developers.
+5. New developers on the project can be quickly brought up to speed.
 
 ##Selector declaration
 
@@ -24,16 +24,16 @@ selector {
 }
 ```
 
-1. If a declaration specifying multiple selectors, each of them must begin on a new line.
-2. Indentation from the left margin equal to 4 whitespaces. Whitespaces shouldn't be mixed with Tabs.
+1. If a declaration specifies multiple selectors, each of them must begin on a new line.
+2. Indentation from the left margin should be 4 whitespaces. Whitespaces shouldn't be mixed with Tabs.
 3. The opening curly brace ('{') should be separated from the selector by a single space and is located on one line with the last selector.
-4. Property and value must be written in one line.
-5. Value is separated from the colon (':') by a single space.
-6. Description of each property ends with a semicolon (';').
+4. Property and Value must be written on one line.
+5. The Value should separated from the colon (':') by a single space.
+6. The description of each property ends with a semicolon (';').
 7. The closing curly brace ('}') is always placed on a new line with no indentation from the edge.
-8. Omit the '0' befor '.' for non-integer values ​​from -1 to 1 (where it is possible).
-9. Use a hex notation for colors and shorthand hex where it is possible (for examplae, #aaa). If you use rgba notation then before it needs a callback in hex (for browsers which do not support rgba).
-10. Property '!important' should be avoided. This is permissible only as a last resort as a temporary solution of urgent problems. The property that includes '!important' should always be accompanied explaining the reason for the comment.
+8. Omit the '0' before '.' for non-integer values ​​from -1 to 1 (where it is possible).
+9. Use a hex notation for colors and shorthand hex where it is possible (for example, #aaa). If you use rgba notation then it needs to start with a callback in hex (for browsers which do not support rgba).
+10. Property '!important' should be avoided. This is permissible only as a last resort as a temporary solution to urgent problems. The property that includes '!important' should always be accompanied with the reason for the comment.
 11. Use only single quotes in the declaration of properties.
 12. Do not put quotes inside a 'url()'.
 13. Always use lowercase for properties (exception: font-family).
@@ -42,7 +42,7 @@ selector {
 .product__note {
 	font-family: 'Times New Roman', Times, Georgia, sans-serif;
     font-size: .9em;
-    font-style: italic !important; /* reason of !important */
+    font-style: italic !important; /* reason for !important */
     line-height: 1.45;
 
     backgroung: url(../i/pic_bg.jpg) no-repeat 0 0 transparent;
@@ -50,7 +50,7 @@ selector {
     color: rgba(170, 170, 170, .9);
 }
 ```
-_Exception:_ selector only with one property should be written in one line:
+_Exception:_ selector with only one property should be written on one line:
 
 ```css
 selector { property: value; }
@@ -62,7 +62,7 @@ selector { property: value; }
 
 ## Naming convention
 
-In the name of the selectors we are adhere to the BEM ideology. BEM - it's a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming of CSS selectors.
+For the name of the selectors we adhere to the BEM ideology. BEM is a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming of CSS selectors.
 
 ### Short introduction to BEM
 
@@ -70,11 +70,11 @@ _Block_ - absolutely independent entity, brick of a project. This unit can be si
 
 _Element_ - part of the Block, responsible for a particular function. It may be only a part of the Block and does not make sense in isolation from Block.
 
-_Modifier_ - property of a Block or Element that changes the appearance or behavior. Has a name and a value. Simultaneously can be used several different Modifiers for one Block or Element.
+_Modifier_ - property of a Block (or Element) that changes the appearance or behavior. Has a name and a value. Several different Modifiers can be used simultaneously for one Block (or Element).
 
 ### Syntax
 ##### Block
-If the name of the Block consists of several words, then they are separated by a hyphen (-).
+If the name of the Block consists of several words, they are separated with a hyphen (-).
 
 ```css
 .menu {
@@ -86,7 +86,7 @@ If the name of the Block consists of several words, then they are separated by a
 ```
 
 ##### Element
-Element consists of the Block's name, double underscore (__) and the name of the Element. For a composite Element's name you can use a hyphen (-).
+Elements consist of the Block's name, double underscore (__) and the name of the Element. For a composite Element's name you can use a hyphen (-).
 
 ```css
 /*
@@ -101,7 +101,7 @@ Element consists of the Block's name, double underscore (__) and the name of the
 ```
 
 ##### Modifier 
-Modifier consists of a Block's (or Element) name, a double hyphen (--), Modifier's name, underscore (_), and the Modifier's value.
+Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier's name, underscore (_), and the Modifier's value.
 
 ```css
 /*
@@ -125,14 +125,14 @@ Modifier consists of a Block's (or Element) name, a double hyphen (--), Modifier
 
 #### Important features
 
-* BEM-methodology excludes the using of id-type selectors for describing the styles (to avoid the high specificity and providing the possibility of re-using a Block). Only class-type selectors allowed for style declaration.
-* Selector name shouldn't be too abstract and at the same time shouldn't describe the content (for example, instead of '.red' will be better to use '.title-error').
-* Name of the class should be as short as possible, but at the same time is so long to save the sense.
+* BEM-methodology excludes the use of id-type selectors for describing the styles (to avoid high specificity and to provide the possibility of re-using a Block). Only class-type selectors are allowed for style declaration.
+* Selector names shouldn't be too abstract and at the same time shouldn't describe the content (for example, instead of '.red' it would be better to use '.title-error').
+* The name of the class should be as short as possible, but at the same time it must be long enough to make sense.
 * The names of Blocks, Elements and Modifiers should reflect as clearly as possible the meaning of the described unit.
-* Selector must not include html tags because we want to get context-independent style units.
-* Cascading selectors should be excluded from CSS. Cascade is possible only in one case - between Modifier and Element.
+* Selectors must not include html tags because we want to get context-independent style units.
+* Cascading selectors should be excluded from CSS. Cascading is possible only in one case - between Modifier and Element.
 
-Example of cascade:
+Example of cascading:
 
 ```css
 /*
@@ -144,12 +144,12 @@ Example of cascade:
 }
 ```
 
-More information about BEM you can find on <http://bem.info>
+You can find more information about BEM here: <http://bem.info>
 
 
-## Order of the selector properties
+## Order of selector properties
 
-To increase the productivity of working with code, it is important to have the same order of describing the properties. All style properties are divided into 4 types: Position, Display & Box model, Typography and Other decoration styles.
+To increase productivity of working with code, it is important to have the same order of describing the properties. All style properties are divided into 4 types: Position, Display & Box model, Typography and Other decoration styles.
 
 Example:
 
@@ -188,14 +188,14 @@ Example:
 
 ## Multiple CSS files
 
-Each Block is described by a separate file and there is only one file which describes one Block. File for Block also includes Elements and Modifiers of the Block. Name of the file is equivalent to the Block name (for example, menu.css, product.css).
+Each Block is described in a separate file and there is only one file which describes one Block. Files for Blocks also include Elements and Modifiers of Blocks. The name of the file must equal the Block name (for example, menu.css, product.css).
 
-Global styles should be presented in separated CSS file (basic.css).
+Global styles should be presented in separated CSS files (basic.css).
 
 
 ## Comments 
 
-CSS files for each Block must begin with the title comment.
+CSS files for each Block must begin with a title comment.
 
 ```css
 /*------------------------------------*\
@@ -218,7 +218,7 @@ CSS files for each Block must begin with the title comment.
 \*------------------------------------*/
 ```
 
-Comment for selector:
+Comments for selectors:
 
 ```css
 /**
@@ -234,7 +234,7 @@ TODO-comment for selector (developer's name is optional):
  */
 ```
 
-Each of selector's properties can have own one-line explanatory comments:
+Each of selector's properties can have its own one-line explanatory comments:
 
 ```css
 .btn--type_order {
@@ -245,7 +245,7 @@ Each of selector's properties can have own one-line explanatory comments:
 
 ## Line breaks
 
-Line breaks in CSS used for the visual distinction. Recommended to use indentation in 1 blank line break between the declarations. When you need more visual differentiation is allowed to use 2 blank line breaks.
+Line breaks in CSS are used for visual distinction. It’s recommended to use indentation and a line break between the declarations. When you need more visual differentiation, use 2 blank line breaks.
 
 For example:
 
@@ -282,7 +282,7 @@ For example:
 
 
 /**
- * product--type_product-page - for detailed page of product
+ * product--type_product-page - for detailed product page
  */
 
 .product--type_product-page {
@@ -290,7 +290,7 @@ For example:
 }
 
 /**
- * product--type_product-page - for detailed page of product
+ * product--type_product-page - for detailed product page
  */
 
 .product--type_grid {
@@ -300,7 +300,7 @@ For example:
 
 ## Z-index
 
-What z-index value to use depends on the context of use:
+Which z-index value should be used depends on the context of use:
 
 1. Page elements: 1-300.
 2. Popup elements on a page: 101 - 300.
@@ -335,7 +335,7 @@ What z-index value to use depends on the context of use:
 
 All variables must be in a separate file (vars.scss)
 
-For the convenience of CSS support in the variables must be defined for all values ​​of the properties: font-size, font-family, line-height, color, background-color, min-width and max-width для @media
+To better support the CSS, variables must be defined for properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media
 
 ```scss
 $font-size-s: 1.2em;
@@ -374,18 +374,18 @@ All global and basic styles should be placed in the basic.scss
 
 ## Common rules for responsive design
 
-* All responsive pages should have 'viewport' meta-tag.
+* All responsive pages should have a ‘viewport' meta-tag.
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 * Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
-* Do not specify a unit of measurement for the 'line-height'. So 'line-height' will be designed proportionally to the current font size.
+* Do not specify a unit of measurement for the 'line-height’; ‘line-height' should be designed proportionally to the current font size.
 ```css
 line-height: 1.4;
 ```
 * Do not use \<table\> for layouts.
 * For padding it is desirable to use em instead of px.
-* Following to mobile-first style we should use only 'min-width' for media queries.
+* Following the mobile-first rule, we should use only 'min-width' for media queries.
 ```css
 @media all and (min-width: 50em) {...}
 ```
@@ -398,7 +398,7 @@ Preferable to use html5.
 <!DOCTYPE html>
 ```
 
-In the tag \<link\> and \<script\> to reference the CSS and Javascript respectively, there is no need to attribute of the type, it can be omitted.
+In the tag \<link\> and \<script\> to reference the CSS and Javascript respectively, there is no need for the type attribute, it can be omitted.
 
 ```html
 <!-- Not recommended -->
@@ -411,7 +411,7 @@ In the tag \<link\> and \<script\> to reference the CSS and Javascript respectiv
 
 ```
 
-Order of attributes in a tags:
+Order of attributes in tags:
 
 ```html
 <a class=""
@@ -436,7 +436,7 @@ Format of todo-comments (developer's name is optional):
 <!-- TODO: change <div> on <ul> -->
 ```
 
-Layout should be semantic, tags should be associated with they purposes.
+Layout should be semantic, tags should be associated with their purposes.
 
 ```html
 <!-- Not recommended -->
@@ -446,7 +446,7 @@ Layout should be semantic, tags should be associated with they purposes.
 <a href="recommendations/">All recommendations</a>
 ```
 
-All \<img\> should have 'alt' attribute.
+All \<img\> should have an 'alt' attribute.
 
 ```html
 <!-- Not recommended -->
@@ -468,7 +468,7 @@ With HTML5 we can omit the '/\>' for tags like \<br /\>, \<hr /\>, \<img /\> etc
 
 ## Optional closing tags
 
-In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. But is recommended to use the closing tags, so code will be clearer and will not confuse the other team members.
+In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. But is recommended to use the closing tags so that the code will be clearer and will not confuse other team members.
 
 
 ```html
@@ -488,7 +488,7 @@ In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. B
 
 ## Line breaks
 
-It is strongly recommended to separate semantic groups of a tags by blank lines for the visual distinction.
+It is strongly recommended to separate semantic groups of tags by blank lines for the visual distinction.
 
 ```html
 <dl>
@@ -515,7 +515,7 @@ It is strongly recommended to separate semantic groups of a tags by blank lines 
 
 ## Comments on closing tags
 
-After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after last closing tag, for example:
+After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after the last closing tag, for example:
 
 ```html
 <div class="product">
