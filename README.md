@@ -2,7 +2,7 @@
 
 ## Necessity to comply with agreements
 
-CSS (cascading style sheets) actually don't have a strict declaration and each developer can write CSS as he or she sees fit. This may work for a small project where the development team is one person. But for large, scalable and projects that require support, best practice requires that teams follow a stricter discipline for writing CSS.
+CSS (cascading style sheets) actually don't have a strict declaration and each developer can write CSS as he or she sees fit. This may work for a small project where the development team is one person. But for large, scalable projects that require support, best practice requires that teams follow a stricter discipline for writing CSS.
 
 These are the benefits from having developers follow the same set of rules and principles:
 
@@ -26,27 +26,27 @@ selector {
 
 1. If a declaration specifies multiple selectors, each of them must begin on a new line.
 2. Indentation from the left margin should be 4 whitespaces. Whitespaces shouldn't be mixed with Tabs.
-3. The opening curly brace ('{') should be separated from the selector by a single space and is located on one line with the last selector.
+3. The opening curly brace ({) should be separated from the selector by a single space and is located on one line with the last selector.
 4. Property and Value must be written on one line.
-5. The Value should separated from the colon (':') by a single space.
-6. The description of each property ends with a semicolon (';').
-7. The closing curly brace ('}') is always placed on a new line with no indentation from the edge.
+5. The Value should separated from the colon (:) by a single space.
+6. The description of each property ends with a semicolon (;).
+7. The closing curly brace (}) is always placed on a new line with no indentation from the edge.
 8. Omit the '0' before '.' for non-integer values ​​from -1 to 1 (where it is possible).
 9. Use a hex notation for colors and shorthand hex where it is possible (for example, #aaa). If you use rgba notation then it needs to start with a callback in hex (for browsers which do not support rgba).
 10. Property '!important' should be avoided. This is permissible only as a last resort as a temporary solution to urgent problems. The property that includes '!important' should always be accompanied with the reason for the comment.
 11. Use only single quotes in the declaration of properties.
 12. Do not put quotes inside a 'url()'.
-13. Always use lowercase for properties (exception: font-family).
+13. Use lowercase for selectors and properties (exception: names like "font-family").
 
 ```css
 .product__note {
-	font-family: 'Times New Roman', Times, Georgia, sans-serif;
+    font-family: 'Times New Roman', Times, Georgia, sans-serif;
     font-size: .9em;
     font-style: italic !important; /* reason for !important */
     line-height: 1.45;
 
     backgroung: url(../i/pic_bg.jpg) no-repeat 0 0 transparent;
-    color: #aaa;
+    color: #aaa; /* callback in hex */
     color: rgba(170, 170, 170, .9);
 }
 ```
@@ -90,7 +90,7 @@ Elements consist of the Block's name, double underscore (__) and the name of the
 
 ```css
 /*
-'menu__item', 'menu__promo-link' - elements of the block 'menu'
+'menu__item', 'menu__promo-link' - Elements of the Block 'menu'
 */
 
 .menu__item {
@@ -105,18 +105,18 @@ Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier
 
 ```css
 /*
-'menu--theme_categories' - modifier for the block 'menu'
-'theme' - modifier name
-'categories' - modifier value
+'menu--theme_categories' - Modifier for the Block 'menu'
+'theme' - Modifier name
+'categories' - Modifier value
 */
 
 .menu--theme_categories {
 }
 
 /*
-'menu__item--type_promo' - modifier for the element 'menu__item'
-'type' - modifier name
-'promo' - modifier value
+'menu__item--type_promo' - Modifier for the Element 'menu__item'
+'type' - Modifier name
+'promo' - Modifier value
 */
 
 .menu__item--type_promo {
@@ -136,8 +136,8 @@ Example of cascading:
 
 ```css
 /*
-'menu--theme_categories' - modifier for the block 'menu'
-'menu__item' - element for the block 'menu'
+'menu--theme_categories' - Modifier for the Block 'menu'
+'menu__item' - Element for the Block 'menu'
 */
 
 .menu--theme_categories .menu__item {
@@ -307,8 +307,9 @@ Which z-index value should be used depends on the context of use:
 3. Modal windows: 301-600.
 4. Popup elements in a modal windows: 601-900.
 
+---
 
-##SASS
+##Common rules for SASS
 
 * Limit nesting level by one.
 * Use ampersand (&) for BEM-style naming of a nested selectors
@@ -316,9 +317,9 @@ Which z-index value should be used depends on the context of use:
 * Nested selectors must be separated by one blank line above and below.
 
 ```scss
-.ecard {  
-					
-	&__header { /* ecar__header */
+.ecard {
+			
+    &__header { /* ecar__header */
 		
 	}
 	
@@ -326,8 +327,8 @@ Which z-index value should be used depends on the context of use:
 
 .ecard--theme_confirmation {
 
-	.ecard__title {
-		font-weight: bold;
+    .ecard__title {
+        font-weight: bold;
 	}
 
 }
@@ -335,7 +336,7 @@ Which z-index value should be used depends on the context of use:
 
 All variables must be in a separate file (vars.scss)
 
-To better support the CSS, variables must be defined for common properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media
+To better support the CSS, variables must be defined for common properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media. For example:
 
 ```scss
 $font-size-s: 1.2em;
@@ -372,6 +373,8 @@ $max-width-xl: 100;
 
 All global and basic styles should be placed in the basic.scss
 
+---
+
 ## Common rules for responsive design
 
 * All responsive pages should have a ‘viewport' meta-tag.
@@ -390,7 +393,9 @@ line-height: 1.4;
 @media all and (min-width: 50em) {...}
 ```
 
-# HTML
+---
+
+#Common rules for HTML
 
 Preferable to use html5.
 
@@ -533,4 +538,12 @@ After a long chain of tags that belong to the same semantic group, it is recomme
 
 ## Id and classes for Javascript
 
-Id and class attributes are intended to work only with javascript should not receive any decoration styles and always should be prefixed with 'js-'.
+Id and class attributes are intended to work only with Javascript should not receive any decoration styles and always should be prefixed with 'js-'. For example:
+
+```html
+<div class="product js-product-collapsible">
+
+    ...
+
+</div>
+```
