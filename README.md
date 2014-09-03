@@ -89,9 +89,9 @@ If the name of the Block consists of several words, they are separated with a hy
 Elements consist of the Block's name, double underscore (__) and the name of the Element. For a composite Element's name you can use a hyphen (-).
 
 ```css
-/*
-'menu__item', 'menu__promo-link' - Elements of the Block 'menu'
-*/
+/**
+ * 'menu__item', 'menu__promo-link' - Elements of the Block 'menu'
+ */
 
 .menu__item {
 }
@@ -104,20 +104,21 @@ Elements consist of the Block's name, double underscore (__) and the name of the
 Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier's name, underscore (_), and the Modifier's value.
 
 ```css
-/*
-'menu--theme_categories' - Modifier for the Block 'menu'
-'theme' - Modifier name
-'categories' - Modifier value
-*/
+/**
+ * 'menu--theme_categories' - Modifier for the Block 'menu'
+ * 'theme' - Modifier name
+ * 'categories' - Modifier value
+ */
 
 .menu--theme_categories {
 }
 
-/*
-'menu__item--type_promo' - Modifier for the Element 'menu__item'
-'type' - Modifier name
-'promo' - Modifier value
-*/
+
+/**
+ * 'menu__item--type_promo' - Modifier for the Element 'menu__item'
+ * 'type' - Modifier name
+ * 'promo' - Modifier value
+ */
 
 .menu__item--type_promo {
 }
@@ -135,10 +136,10 @@ Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier
 Example of cascading:
 
 ```css
-/*
-'menu--theme_categories' - Modifier for the Block 'menu'
-'menu__item' - Element for the Block 'menu'
-*/
+/**
+ * 'menu--theme_categories' - Modifier for the Block 'menu'
+ * 'menu__item' - Element for the Block 'menu'
+ */
 
 .menu--theme_categories .menu__item {
 }
