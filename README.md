@@ -1,6 +1,7 @@
 # Rules and principles for scalable CSS
 
-## Necessity to comply with agreements
+
+## Compliance with agreements
 
 CSS (cascading style sheets) actually don't have a strict declaration and each developer can write CSS as he or she sees fit. This may work for a small project where the development team is one person. But for large, scalable projects that require support, best practice requires that teams follow a stricter discipline for writing CSS.
 
@@ -11,6 +12,7 @@ These are the benefits from having developers follow the same set of rules and p
 3. Development productivity will increase. Strict rules shorten the time required for editing and creating new styles.
 4. The code will be scalable and reusable.
 5. New developers on the project can be quickly brought up to speed.
+
 
 ##Selector declaration
 
@@ -36,7 +38,7 @@ selector {
 10. Property '!important' should be avoided. This is permissible only as a last resort as a temporary solution to urgent problems. The property that includes '!important' should always be accompanied with the reason for the comment.
 11. Use only single quotes in the declaration of properties.
 12. Do not put quotes inside a 'url()'.
-13. Use lowercase for selectors and properties (exception: names like "font-family").
+13. Use lowercase for selectors and properties (exception: names like 'font-family').
 
 ```css
 .product__note {
@@ -50,6 +52,7 @@ selector {
     color: rgba(170, 170, 170, .9);
 }
 ```
+
 _Exception:_ selector with only one property should be written on one line:
 
 ```css
@@ -59,93 +62,6 @@ selector { property: value; }
 ```css
 .product__title { font-weight: bold; }
 ```
-
-## Naming convention
-
-For the name of the selectors we adhere to the BEM ideology. BEM is a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming of CSS selectors.
-
-### Short introduction to BEM
-
-_Block_ - absolutely independent entity, brick of a project. This unit can be simple or composite, i.e. contain other Blocks.
-
-_Element_ - part of the Block, responsible for a particular function. It may be only a part of the Block and does not make sense in isolation from Block.
-
-_Modifier_ - property of a Block (or Element) that changes the appearance or behavior. Has a name and a value. Several different Modifiers can be used simultaneously for one Block (or Element).
-
-### Syntax
-##### Block
-If the name of the Block consists of several words, they are separated with a hyphen (-).
-
-```css
-.menu {
-}
-
-.product-categories {
-}
-
-```
-
-##### Element
-Elements consist of the Block's name, double underscore (__) and the name of the Element. For a composite Element's name you can use a hyphen (-).
-
-```css
-/**
- * 'menu__item', 'menu__promo-link' - Elements of the Block 'menu'
- */
-
-.menu__item {
-}
-
-.menu__promo-link {
-}
-```
-
-##### Modifier 
-Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier's name, underscore (_), and the Modifier's value.
-
-```css
-/**
- * 'menu--theme_categories' - Modifier for the Block 'menu'
- * 'theme' - Modifier name
- * 'categories' - Modifier value
- */
-
-.menu--theme_categories {
-}
-
-
-/**
- * 'menu__item--type_promo' - Modifier for the Element 'menu__item'
- * 'type' - Modifier name
- * 'promo' - Modifier value
- */
-
-.menu__item--type_promo {
-}
-```
-
-#### Important features
-
-* BEM-methodology excludes the use of id-type selectors for describing the styles (to avoid high specificity and to provide the possibility of re-using a Block). Only class-type selectors are allowed for style declaration.
-* Selector names shouldn't be too abstract and at the same time shouldn't describe the content (for example, instead of '.red' it would be better to use '.title-error').
-* The name of the class should be as short as possible, but at the same time it must be long enough to make sense.
-* The names of Blocks, Elements and Modifiers should reflect as clearly as possible the meaning of the described unit.
-* Selectors must not include html tags because we want to get context-independent style units.
-* Cascading selectors should be excluded from CSS. Cascading is possible only in one case - between Modifier and Element.
-
-Example of cascading:
-
-```css
-/**
- * 'menu--theme_categories' - Modifier for the Block 'menu'
- * 'menu__item' - Element for the Block 'menu'
- */
-
-.menu--theme_categories .menu__item {
-}
-```
-
-You can find more information about BEM here: <http://bem.info>
 
 
 ## Order of selector properties
@@ -186,12 +102,6 @@ Example:
     color: #333;
 }
 ```
-
-## Multiple CSS files
-
-Each Block is described in a separate file and there is only one file which describes one Block. Files for Blocks also include Elements and Modifiers of Blocks. The name of the file must equal the Block name (for example, menu.css, product.css).
-
-Global styles should be presented in separated CSS files (basic.css).
 
 
 ## Comments 
@@ -244,11 +154,12 @@ Each of selector's properties can have its own one-line explanatory comments:
 }
 ```
 
+
 ## Line breaks
 
 Line breaks in CSS are used for visual distinction. It’s recommended to use indentation and a line break between the declarations. When you need more visual differentiation, use 2 blank line breaks.
 
-For example:
+_Example:_
 
 ```css
 /*------------------------------------*\
@@ -299,6 +210,7 @@ For example:
 }
 ```
 
+
 ## Z-index
 
 Which z-index value should be used depends on the context of use:
@@ -310,17 +222,127 @@ Which z-index value should be used depends on the context of use:
 
 ---
 
-##Common rules for SASS
 
-* Limit nesting level by one.
-* Use ampersand (&) for BEM-style naming of a nested selectors
-* Nested selectors should be indented from the left. 
+## Naming convention
+
+For the name of the selectors we adhere to the BEM ideology. BEM is a methodology and set of tools for front-end development created by Yandex. We will take only a part of the methodology - the naming of CSS selectors.
+
+
+### Short introduction to BEM
+
+_Block_ - absolutely independent entity, brick of a project. This unit can be simple or composite, i.e. contain other Blocks.
+
+_Element_ - part of the Block, responsible for a particular function. It may be only a part of the Block and does not make sense in isolation from Block.
+
+_Modifier_ - property of a Block (or Element) that changes the appearance or behavior. Has a name and a value. Several different Modifiers can be used simultaneously for one Block (or Element).
+
+
+### Syntax
+_Block_
+If the name of the Block consists of several words, they are separated with a hyphen (-).
+
+```css
+.menu {
+}
+
+.product-categories {
+}
+
+```
+
+_Element_
+Elements consist of the Block's name, double underscore (__) and the name of the Element. For a composite Element's name you can use a hyphen (-).
+
+```css
+/**
+ * 'menu__item', 'menu__promo-link' - Elements of the Block 'menu'
+ */
+
+.menu__item {
+}
+
+.menu__promo-link {
+}
+```
+
+_Modifier_
+Modifiers consist of a Block's (or Element) name, a double hyphen (--), Modifier's name, underscore (_), and the Modifier's value.
+
+```css
+/**
+ * 'menu--theme_categories' - Modifier for the Block 'menu'
+ * 'theme' - Modifier name
+ * 'categories' - Modifier value
+ */
+
+.menu--theme_categories {
+}
+
+
+/**
+ * 'menu__item--type_promo' - Modifier for the Element 'menu__item'
+ * 'type' - Modifier name
+ * 'promo' - Modifier value
+ */
+
+.menu__item--type_promo {
+}
+```
+
+
+#### Important features
+
+* BEM-methodology excludes the use of id-type selectors for describing the styles (to avoid high specificity and to provide the possibility of re-using a Block). Only class-type selectors are allowed for style declaration.
+* Selector names shouldn't be too abstract and at the same time shouldn't describe the content (for example, instead of '.red' it would be better to use '.title-error').
+* The name of the class should be as short as possible, but at the same time it must be long enough to make sense.
+* The names of Blocks, Elements and Modifiers should reflect as clearly as possible the meaning of the described unit.
+* Selectors must not include html tags because we want to get context-independent style units.
+* Cascading selectors should be excluded from CSS. Cascading is possible only in one case - between Modifier and Element.
+
+_Example of cascading:_
+
+```css
+/**
+ * 'menu--theme_categories' - Modifier for the Block 'menu'
+ * 'menu__item' - Element for the Block 'menu'
+ */
+
+.menu--theme_categories .menu__item {
+}
+```
+
+You can find more information about BEM here: <http://bem.info>
+
+---
+
+
+## Multiple CSS folders and files
+
+* Each Block is described in a separate folder (the name of the folder is the same as the name of the Block). There is only one folder and file, which describes a Block. The folder for Blocks also includes Elements and Modifiers of Blocks.
+* Each Element has its own folder within the associated Block folder (the name of the folder consists of a double underscore and Element name, without the Block name).
+* Each Modifier has its own folder within the associated Block folder (the name of the folder consists of a double hyphen, the modifier's name, an underscore, and the modifier's value, without the Block name).
+* CSS files within Block, Element and Modifier folders always have a full name (and they always start with the name of the Block).
+
+_Example:_
+
+![Multiple CSS folders and files](/folders.jpg)
+
+
+Global styles should be presented in a separate  global CSS file (for example, global.css)
+
+---
+
+
+##Common rules for SASS preprocessor
+
+* Limit nesting levels to one.
+* Nested selectors should be indented from the left.
 * Nested selectors must be separated by one blank line above and below.
 
 ```scss
-.ecard {
+.ecard--theme_confirmation {
 			
-    &__header { /* ecar__header */
+    &:hover { /* mean ‘ecard--theme_confirmation:hover’ */
 		
 	}
 	
@@ -335,9 +357,9 @@ Which z-index value should be used depends on the context of use:
 }
 ```
 
-All variables must be in a separate file (vars.scss)
+All variables must be in a separate file (vars.scss). To better support the CSS, variables must be defined for common properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media.
 
-To better support the CSS, variables must be defined for common properties, such as: font-size, font-family, line-height, color, background-color, min-width and max-width for @media. For example:
+_Example:_
 
 ```scss
 $font-size-s: 1.2em;
@@ -372,9 +394,10 @@ $max-width-xl: 100;
 
 ```
 
-All global and basic styles should be placed in the basic.scss
+All global and basic styles should be placed in the global.scss
 
 ---
+
 
 ## Common rules for responsive design
 
@@ -382,7 +405,7 @@ All global and basic styles should be placed in the basic.scss
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. *Exception:* 'pt' can only be used for the printed version of the page. 
+* Font size can be specified in '%', 'em' or 'rem' (with callbacks in 'em' for old browsers). You shouldn't specify the font size in fixed units like 'px' or 'pt'. _Exception:_ 'pt' can only be used for the printed version of the page. 
 * Do not specify a unit of measurement for the 'line-height’; ‘line-height' should be designed proportionally to the current font size.
 ```css
 line-height: 1.4;
@@ -396,15 +419,15 @@ line-height: 1.4;
 
 ---
 
+
 #Common rules for HTML
 
-Preferable to use html5.
-
+We should use HTML5 doctype:
 ```html
 <!DOCTYPE html>
 ```
 
-In the tag \<link\> and \<script\> to reference the CSS and Javascript respectively, there is no need for the type attribute, it can be omitted.
+In the tag \<link\> and \<script\> to reference the CSS and JavaScript respectively, there is no need for the type attribute, it can be omitted.
 
 ```html
 <!-- Not recommended -->
@@ -417,7 +440,10 @@ In the tag \<link\> and \<script\> to reference the CSS and Javascript respectiv
 
 ```
 
-Order of attributes in tags:
+
+## Order of attributes
+
+_Samples for order of attributes in tags:_
 
 ```html
 <a class=""
@@ -435,12 +461,18 @@ Order of attributes in tags:
      alt="">
 ```
 
+
+## TODO-comments
+
 Format of todo-comments (developer's name is optional):
 
 ```html
 <!-- @asvyazhin TODO: remove optional tags -->
 <!-- TODO: change <div> on <ul> -->
 ```
+
+
+## Semantic layout
 
 Layout should be semantic, tags should be associated with their purposes.
 
@@ -462,6 +494,7 @@ All \<img\> should have an 'alt' attribute.
 <img src="product.png" alt="Product name">
 ```
 
+
 ## No self closing tags
 
 With HTML5 we can omit the '/\>' for tags like \<br /\>, \<hr /\>, \<img /\> etc.
@@ -472,10 +505,10 @@ With HTML5 we can omit the '/\>' for tags like \<br /\>, \<hr /\>, \<img /\> etc
 <img src=“”>
 ```
 
+
 ## Optional closing tags
 
 In HTML5 (or non-XHTML syntax) we can omit closing tags from certain elements. But is recommended to use the closing tags so that the code will be clearer and will not confuse other team members.
-
 
 ```html
 <!-- Not recommended -->
@@ -519,9 +552,12 @@ It is strongly recommended to separate semantic groups of tags by blank lines fo
 </div>
 ```
 
+
 ## Comments on closing tags
 
-After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after the last closing tag, for example:
+After a long chain of tags that belong to the same semantic group, it is recommended to leave a comment after the last closing tag.
+
+_Example:_
 
 ```html
 <div class="product">
@@ -537,9 +573,12 @@ After a long chain of tags that belong to the same semantic group, it is recomme
 </div><!-- /product -->
 ```
 
-## Id and classes for Javascript
 
-Id and class attributes are intended to work only with Javascript should not receive any decoration styles and always should be prefixed with 'js-'. For example:
+## IDs and classes for JavaScript
+
+Id and class attributes are intended to work only with JavaScript should not receive any decoration styles and always should be prefixed with 'js-'. 
+
+_Example:_
 
 ```html
 <div class="product js-product-collapsible">
